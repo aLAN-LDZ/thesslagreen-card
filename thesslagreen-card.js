@@ -24,13 +24,13 @@ class ThesslaGreenCard extends HTMLElement {
       elementsContainer.style.width = '100%';
       elementsContainer.style.height = '100%';
   
-      // Dodanie ikony wiatraka
-      const fanIcon = document.createElement('ha-icon');
-      fanIcon.icon = 'mdi:fan'; // Ikona wiatraka
-      fanIcon.style.position = 'absolute';
-      fanIcon.style.top = '40%';
-      fanIcon.style.left = '60%';
-      fanIcon.style.fontSize = '3rem';
+      // Przykładowy element (np. czujnik)
+      const el = document.createElement('ha-icon');
+      el.innerText = 'mdi:fire';
+      el.style.position = 'absolute';
+      el.style.top = '40%';
+      el.style.left = '60%';
+      el.style.fontSize = '2rem';
   
       elementsContainer.appendChild(el);
       card.appendChild(background);
@@ -46,14 +46,6 @@ class ThesslaGreenCard extends HTMLElement {
       ha-card {
         padding: 16px;
         box-sizing: border-box;
-      }
-      .spinning {
-        animation: spin 2s linear infinite;
-      }
-
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
       }
     `;
   }
