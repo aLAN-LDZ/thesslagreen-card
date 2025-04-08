@@ -30,7 +30,7 @@ class ThesslaGreenCard extends HTMLElement {
       el.style.position = 'absolute';
       el.style.top = '40%';
       el.style.left = '60%';
-      el.style.fontSize = '20rem';
+      el.style.setProperty('--ha-icon-size', '20rem');  // Zmiana rozmiaru ikony
   
       elementsContainer.appendChild(el);
       card.appendChild(background);
