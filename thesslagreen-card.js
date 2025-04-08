@@ -24,14 +24,13 @@ class ThesslaGreenCard extends HTMLElement {
       elementsContainer.style.width = '100%';
       elementsContainer.style.height = '100%';
   
-      // Przykładowy element: animowany wiatrak
+      // Dodanie ikony wiatraka
       const fanIcon = document.createElement('ha-icon');
-      fanIcon.icon = 'mdi:fan'; // Możesz zmienić na dowolną ikonę
+      fanIcon.icon = 'mdi:fan'; // Ikona wiatraka
       fanIcon.style.position = 'absolute';
       fanIcon.style.top = '40%';
       fanIcon.style.left = '60%';
       fanIcon.style.fontSize = '3rem';
-      fanIcon.classList.add('spinning'); // Dodanie klasy CSS dla animacji
   
       elementsContainer.appendChild(el);
       card.appendChild(background);
