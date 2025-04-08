@@ -26,11 +26,11 @@ class ThesslaGreenCard extends HTMLElement {
   
       // Przykładowy element (np. czujnik)
       const el = document.createElement('ha-icon');
-      el.icon = 'mdi:fire';
+      el.icon = 'mdi:fan';
       el.style.position = 'absolute';
       el.style.top = '40%';
       el.style.left = '60%';
-      el.style.fontSize = '2rem';
+      el.style.fontSize = '20rem';
   
       elementsContainer.appendChild(el);
       card.appendChild(background);
