@@ -12,7 +12,7 @@ class ThesslaGreenCard extends HTMLElement {
       card.style.overflow = 'hidden';
   
       const background = document.createElement('img');
-      background.src = backgroundImage
+      background.src = backgroundImage;
       background.style.width = '100%';
       background.style.display = 'block';
   
@@ -24,15 +24,44 @@ class ThesslaGreenCard extends HTMLElement {
       elementsContainer.style.width = '100%';
       elementsContainer.style.height = '100%';
   
-      // Przykładowy element (np. czujnik)
-      const el = document.createElement('div');
-      el.innerText = '🔥';
-      el.style.position = 'absolute';
-      el.style.top = '40%';
-      el.style.left = '60%';
-      el.style.fontSize = '2rem';
-  
-      elementsContainer.appendChild(el);
+      // Dodajemy <style> z animacją do shadow DOM
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      `;
+      this.appendChild(style);
+
+      const elWrapper = document.createElement('div');
+      elWrapper.style.position = 'absolute';
+      elWrapper.style.left = '10%';
+      elWrapper.style.top = '65%';
+      elWrapper.style.animation = 'spin 2s linear infinite';     
+
+      const el = document.createElement('ha-icon');
+      el.icon = 'mdi:fan';
+      el.setAttribute('style', `
+        --mdc-icon-size: 10vw;
+        color: #969595;
+      `);
+
+      elWrapper.appendChild(el);                // Dodajemy ikonę do wrappera
+      elementsContainer.appendChild(elWrapper); // Wrapper do kontenera
+
+      // Dodajemy label z napisem "Temperatura"
+      const label = document.createElement('div');
+      label.textContent = 'Temperatura';
+      label.style.position = 'absolute';
+      label.style.top = '10%';
+      label.style.left = '10%';
+      label.style.fontSize = '2vw';
+      label.style.color = '#969595';
+      label.style.fontWeight = 'bold';
+
+      elementsContainer.appendChild(label); // Dodajemy label do kontenera
+
       card.appendChild(background);
       card.appendChild(elementsContainer);
       this.appendChild(card);
@@ -61,4 +90,3 @@ window.customCards.push({
   preview: false,
   description: 'Custom picture-elements-like card for Thessla Green integration'
 });
-
