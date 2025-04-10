@@ -18,10 +18,10 @@ class h extends HTMLElement {
           100% { transform: rotate(360deg); }
         }
       `, this.appendChild(R);
-      const g = document.createElement("div");
-      g.style.position = "absolute", g.style.left = "10%", g.style.top = "65%", g.style.animation = "spin 2s linear infinite";
-      const B = document.createElement("img");
-      B.src = f, B.style.width = "50px", B.style.height = "50px", g.appendChild(B), A.appendChild(g);
+      const B = document.createElement("div");
+      B.style.position = "absolute", B.style.animation = "spin 2s linear infinite";
+      const g = document.createElement("img");
+      g.src = f, g.style.height = "90px", g.style.left = "50%", g.style.top = "50%", B.appendChild(g), A.appendChild(B);
       const E = document.createElement("div");
       E.textContent = "Temperatura", E.style.position = "absolute", E.style.top = "10%", E.style.left = "10%", E.style.fontSize = "2vw", E.style.color = "#969595", E.style.fontWeight = "bold", A.appendChild(E), I.appendChild(C), I.appendChild(A), this.appendChild(I), this.content = I;
     }
